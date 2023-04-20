@@ -809,8 +809,13 @@ module "emr_on_eks" {
 }
 
 module "consul" {
-  count             = var.enable_consul ? 1 : 0
-  source            = "./consul"
+
+   count = var.enable_consul ? 1 : 0
+
+  # See https://registry.terraform.io/modules/hashicorp/hashicorp-consul-eks-addon/aws/
+  source  = "gautambaghel/consul-eks-blueprints-addon"
+  version = "1.0.0-rc2"
+
   helm_config       = var.consul_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
