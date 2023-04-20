@@ -814,7 +814,6 @@ module "consul" {
 
   # See https://registry.terraform.io/modules/hashicorp/hashicorp-consul-eks-addon/aws/
   source  = "gautambaghel/consul-eks-blueprints-addon"
-  version = "1.0.0-rc2"
 
   helm_config       = var.consul_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
