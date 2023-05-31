@@ -813,7 +813,7 @@ module "consul" {
    count = var.enable_consul ? 1 : 0
 
   # See https://registry.terraform.io/modules/hashicorp/hashicorp-consul-eks-addon/aws/
-  source  = "github.com/hashicorp/terraform-aws-hashicorp-consul-eks-addon"
+  source  = "github.com/gautambaghel/consul-eks-blueprints-addon"
 
   helm_config       = var.consul_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
